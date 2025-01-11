@@ -10,13 +10,11 @@ const port = process.env.PORT
 // Directorio publico
 app.use( express.static('public') );
 
-// Rutas
-// app.get('/', (req, res) => {
+// Lectura y parseo del body
+app.use( express.json() );
 
-//     res.json({
-//         "ok": true
-//     })
-// })
+// Rutas
+app.use('/api/auth', require('./routes/auth'))
 
 // Escuchar las peticiones
 app.listen( port, () => {
