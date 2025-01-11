@@ -7,9 +7,10 @@
 
 const { Router } = require('express');
 const router = Router();
-const { createUser, loginUser, tokenRevalidation } = require('../controllers/auth')
-const { check } = require('express-validator')
-const { validarCampos } = require('../middlewares/validar-campos')
+const { createUser, loginUser, tokenRevalidation } = require('../controllers/auth');
+const { check } = require('express-validator');
+const { validarCampos } = require('../middlewares/validar-campos');
+const { validarJWT } = require('../middlewares/validar-jwt');
 
 router.post(
     '/new',
@@ -32,6 +33,6 @@ router.post(
     loginUser
 );
 
-router.get('/renew', tokenRevalidation );
+router.get('/renew', validarJWT, tokenRevalidation );
 
 module.exports = router;
