@@ -1,8 +1,6 @@
 /* 
-    Rutas de Usuarios / Auth
-    host + /api/auth/new reistrar usuario
-    host + /api/auth loggear usuario
-    host + /api/auth/renew revalidarToken del usuario
+    Rutas de Usuarios
+    /api/auth
 */
 
 const { Router } = require('express');

@@ -1,12 +1,11 @@
-const { response, json } = require('express');
-const Usuario = require('../models/user');
+const { response } = require('express');
+const Usuario = require('../models/User');
 const bcrypt = require('bcryptjs')
 const { generarJWT } = require('../helpers/jwt')
 
 const createUser = async(req, res = response ) => {
 
     const { email, password } = req.body;
-
 
     try {
 
